@@ -61,9 +61,9 @@ awk -F ',' '$4=="M"{sum+=$9}END{print sum}' bank_transactions.csv
 
 echo '3. Customer with the highest average transaction amount in the dataset: '
 awk -F ',' '{seen[$2]+=$9; count[$2]++} END{for (x in seen)print  seen[x]/count[x],x}' bank_transactions.csv | sort -nr | head -n 1
-# 991132 C4141768 
+# 1560034 C7319271
 
 # verifica python
 # data.groupby('CustomerID')['TransactionAmount (INR)'].mean().sort_values(ascending=False).head(1)
-# C4141768     991132.22  
+# C7319271    1560034 
 
